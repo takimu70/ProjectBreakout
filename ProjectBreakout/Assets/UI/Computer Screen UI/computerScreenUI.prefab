@@ -30,12 +30,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1589859144737099635}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
-  m_SizeDelta: {x: 0, y: 61.679993}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 45.119995}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1672377305146313166
 CanvasRenderer:
@@ -383,10 +383,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "public GameObject computerScreenUI;\r\n\r\n    private bool isInRange
-    = false;\r\n\r\n    private void OnTriggerEnter(Collider other)\r\n    {\r\n       
-    if (other.CompareTag(\"Player\"))\r\n        {\r\n            isInRange = true;\r\n       
-    }\r\n    }\u200B"
+  m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 245264bbbb76c0e43921671ad8b93bcc, type: 2}
   m_sharedMaterial: {fileID: -2886460021728793713, guid: 245264bbbb76c0e43921671ad8b93bcc, type: 2}
@@ -485,8 +482,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 3363054279790548556}
   - {fileID: 5621533381767716917}
+  - {fileID: 3363054279790548556}
   - {fileID: 3404391207590023174}
   m_Father: {fileID: 8444994956978431175}
   m_RootOrder: 0
@@ -620,10 +617,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.9528302, g: 0.9528302, b: 0.9528302, a: 0.7529412}
-  m_Text: "public GameObject computerScreenUI;\r\n\r\n    private bool isInRange
-    = false;\r\n\r\n    private void OnTriggerEnter(Collider other)\r\n    {\r\n       
-    if (other.CompareTag(\"Player\"))\r\n        {\r\n            isInRange = true;\r\n       
-    }\r\n    }"
+  m_Text: 
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -665,12 +659,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1589859144737099635}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000030517578}
-  m_SizeDelta: {x: 0, y: 61.679993}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 45.12001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4720003753960845152
 CanvasRenderer:
@@ -973,7 +967,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7831365407930919211}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
