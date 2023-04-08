@@ -11,9 +11,9 @@ public class MonitorController : MonoBehaviour
     [SerializeField] private MyCodeBlock initialCodeBlock;
 
     [Header("References")]
-    [SerializeField] private TMP_InputField textContainer;
+    [SerializeField] private TMP_InputField playerInput;
     [SerializeField] private TMP_Text childText;
-    private float flashDuration = 0.5f;
+    [SerializeField] private float flashDuration = 0.5f;
 
     Coroutine currentFlashRoutine;
     private Color initialColor;
@@ -21,7 +21,7 @@ public class MonitorController : MonoBehaviour
     private void Start()
     {
         initialColor = Color.white;
-        textContainer.text = initialCodeBlock.codeBlock;
+        playerInput.text = initialCodeBlock.codeBlock;
     }
 
     
@@ -30,38 +30,37 @@ public class MonitorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            bool flag = false;
-
+            
             foreach (MyCodeBlock validCode in validCodeBlocks)
             {
-                if (validCode.codeBlock == textContainer.text) 
-                {
-                    flag = true;
-                    initialCodeBlock = validCode;
-                    Completed();
-                    
-                    break;
-
-                }
+                //PlayerInput validlerden biriyle matchliyor mu diye bakar.
+                if (MatchesInput(validCode)) return;
 
             }
 
-            if (flag == false)
-            {
-                StartFlash(Color.red);
-                textContainer.text = initialCodeBlock.codeBlock;
-            }
+            //Hiç biri matchlemezse gelir.
+            StartFlash(Color.red);
+            playerInput.text = initialCodeBlock.codeBlock;
+            
 
         }
 
     }
 
-    private void Completed()
+    private bool MatchesInput(MyCodeBlock validCodeBlock)
     {
-        StartFlash(Color.green);
-        textContainer.text = initialCodeBlock.codeBlock;
+        if (validCodeBlock.codeBlock == playerInput.text)
+        {
+            //Buradan event triggerlanacak
 
+            StartFlash(Color.green);
+            playerInput.interactable = false;
+            return true;
+        }
+        else return false;
     }
+
+    
 
 
 
