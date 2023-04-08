@@ -16,14 +16,16 @@ public class boxTrigger_Script : MonoBehaviour
         }
     }
 
+   
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             isInRange = false;
             computerScreenUI.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
         }
     }
 
@@ -42,4 +44,8 @@ public class boxTrigger_Script : MonoBehaviour
             Cursor.visible = false;
         }
     }
+
+
+
+
 }
