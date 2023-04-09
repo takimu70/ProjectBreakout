@@ -24,13 +24,13 @@ public class MonitorController : MonoBehaviour
         playerInput.text = initialCodeBlock.codeBlock;
     }
 
-    
+
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            
+
             foreach (MyCodeBlock validCode in validCodeBlocks)
             {
                 //PlayerInput validlerden biriyle matchliyor mu diye bakar.
@@ -38,10 +38,10 @@ public class MonitorController : MonoBehaviour
 
             }
 
-            //Hic biri matchlemezse gelir.
+            //Hiç biri matchlemezse gelir.
             StartFlash(Color.red);
             playerInput.text = initialCodeBlock.codeBlock;
-            
+
 
         }
 
@@ -54,13 +54,14 @@ public class MonitorController : MonoBehaviour
             //Buradan event triggerlanacak
 
             StartFlash(Color.green);
+            validCodeBlock.gameEvent.Raise();
             playerInput.interactable = false;
             return true;
         }
         else return false;
     }
 
-    
+
 
 
 
