@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boxTrigger_Script : MonoBehaviour
+public class boxTrigger_Scriptv2 : MonoBehaviour
 {
-    public GameObject computerScreenUI;
+    public GameObject computerScreenUIv2;
 
     private bool isInRange = false;
 
@@ -23,9 +23,9 @@ public class boxTrigger_Script : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isInRange = false;
-            computerScreenUI.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            computerScreenUIv2.SetActive(false);
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
         }
     }
 
@@ -33,13 +33,13 @@ public class boxTrigger_Script : MonoBehaviour
     {
         if (isInRange && Input.GetKeyDown(KeyCode.E))
         {
-            computerScreenUI.SetActive(true);
+            computerScreenUIv2.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
         else if (isInRange && Input.GetKeyDown(KeyCode.Escape))
         {
-            computerScreenUI.SetActive(false);
+            computerScreenUIv2.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }

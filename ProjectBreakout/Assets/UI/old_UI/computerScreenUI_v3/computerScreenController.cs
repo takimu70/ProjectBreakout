@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class MonitorController : MonoBehaviour
+public class computerScreenController : MonoBehaviour
 {
     
     [SerializeField] private MyCodeBlock[] validCodeBlocks;
