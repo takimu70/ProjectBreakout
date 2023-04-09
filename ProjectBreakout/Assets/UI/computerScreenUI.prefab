@@ -227,10 +227,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   validCodeBlocks:
-  - {fileID: 11400000, guid: 54a1a117886986b4db50f01ab395d754, type: 2}
-  - {fileID: 11400000, guid: 55ecfa6a09e76e84d8c01c360c65776e, type: 2}
-  - {fileID: 11400000, guid: d8270ed9ac5c9a647ad1c63f27b4be63, type: 2}
-  initialCodeBlock: {fileID: 11400000, guid: f21d8cf4116a36449b715bef4e71ada6, type: 2}
+  - {fileID: 11400000, guid: b56ee6bc5ec92814885608f9153068f8, type: 2}
+  - {fileID: 11400000, guid: 4045cda17c0541e48a52a5cb0679b912, type: 2}
+  - {fileID: 11400000, guid: 1ee822c8d5f89e14090862b353c38eef, type: 2}
+  - {fileID: 11400000, guid: e2de5e3f80cb8dd4e8382b0a6c019a20, type: 2}
+  - {fileID: 11400000, guid: a9c48b4799920c6489f0044e6b77883b, type: 2}
+  - {fileID: 11400000, guid: c9665bbc40c73b2419d7ae6022d75885, type: 2}
+  - {fileID: 11400000, guid: 718fe03dda1a2ee408f0725529d5e0f8, type: 2}
+  initialCodeBlock: {fileID: 11400000, guid: c715b1231db9b8a468e4ddfebb8b1854, type: 2}
   playerInput: {fileID: 6504001146716416249}
   childText: {fileID: 6504001146720544245}
   flashDuration: 1

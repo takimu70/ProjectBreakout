@@ -10,6 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ce8bf9cbf1b88b145931c301afdf7d98, type: 3}
-  m_Name: lvl1Valid2
+  m_Name: Kapi
   m_EditorClassIdentifier: 
-  codeBlock: alpat
+  codeBlock: 'kutular = true;
+
+    kapi = false;
+
+    robot = true;'
+  gameEvents:
+  - {fileID: 11400000, guid: 19f63c8a65b0fa547b344bc36da7e5a5, type: 2}

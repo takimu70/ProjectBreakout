@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce8bf9cbf1b88b145931c301afdf7d98, type: 3}
+  m_Name: KapiRobot
+  m_EditorClassIdentifier: 
+  codeBlock: 'kutular = true;
+
+    kapi = false;
+
+    robot = false;'
+  gameEvents:
+  - {fileID: 11400000, guid: 19f63c8a65b0fa547b344bc36da7e5a5, type: 2}
+  - {fileID: 11400000, guid: 0b5b9422787a4fe429d0bc16302a9d4e, type: 2}

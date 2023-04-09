@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8bf9cbf1b88b145931c301afdf7d98, type: 3}
-  m_Name: lvl1Init
+  m_Script: {fileID: 11500000, guid: a1a9ff5dcede03845878d901f26e5689, type: 3}
+  m_Name: eKapiAcil
   m_EditorClassIdentifier: 
-  codeBlock: Enter text...
+  listeners: []

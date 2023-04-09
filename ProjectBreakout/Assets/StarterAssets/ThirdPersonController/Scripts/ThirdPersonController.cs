@@ -75,6 +75,32 @@ namespace StarterAssets
         [Tooltip("For locking the camera position on all axis")]
         public bool LockCameraPosition = false;
 
+
+
+        ///////////////////////////////////////////////////////////////////////Benim ekledigim degiskenler
+        public float standHeight = 1.8f;
+        public float crouchHeight = 0.7f;
+        public bool crouched = false;
+        private float controllerHeight = 2;
+        public float crouchSpeed = 5;
+
+        public float ControllerHeight
+        {
+         
+            get
+            {
+                if (crouched)
+                {
+                    return crouchHeight;
+                }
+                else
+                {
+                    return standHeight;
+                }
+            }
+            
+        }
+
         // cinemachine
         private float _cinemachineTargetYaw;
         private float _cinemachineTargetPitch;
@@ -97,6 +123,7 @@ namespace StarterAssets
         private int _animIDJump;
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
+        private int _animIDCrouch;
 
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
@@ -173,6 +200,7 @@ namespace StarterAssets
             _animIDJump = Animator.StringToHash("Jump");
             _animIDFreeFall = Animator.StringToHash("FreeFall");
             _animIDMotionSpeed = Animator.StringToHash("MotionSpeed");
+            _animIDCrouch = Animator.StringToHash("Crouch");
         }
 
         private void GroundedCheck()
@@ -214,7 +242,19 @@ namespace StarterAssets
         private void Move()
         {
             // set target speed based on move speed, sprint speed and if sprint is pressed
-            float targetSpeed = _input.sprint ? SprintSpeed : MoveSpeed;
+            float targetSpeed; //= _input.sprint ? SprintSpeed : MoveSpeed;
+            if (_input.sprint && !crouched)
+            {
+                targetSpeed = SprintSpeed;
+            }
+            else if (crouched)
+            {
+                targetSpeed = crouchSpeed;
+            }
+            else
+            {
+                targetSpeed = MoveSpeed;
+            }
 
             // a simplistic acceleration and deceleration designed to be easy to remove, replace, or iterate upon
 
@@ -277,6 +317,26 @@ namespace StarterAssets
                 _animator.SetFloat(_animIDSpeed, _animationBlend);
                 _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
             }
+
+            //////////////////////////////////////////////////////////////////////////////BURADA
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                Debug.Log("Crouch button pressed");
+                crouched = !crouched;
+                if (crouched)
+                {
+                    _animator.SetBool(_animIDCrouch, true);
+                } else
+                {
+                    _animator.SetBool(_animIDCrouch, false);
+                }
+
+            }
+
+            controllerHeight = Mathf.Lerp(controllerHeight, ControllerHeight, crouchSpeed * Time.deltaTime);
+            _controller.height = controllerHeight;
+
+
         }
 
         private void JumpAndGravity()
