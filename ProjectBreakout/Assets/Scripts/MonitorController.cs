@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using StarterAssets;
-using UnityEngine.InputSystem;
 
 public class MonitorController : MonoBehaviour
 {
@@ -20,22 +18,12 @@ public class MonitorController : MonoBehaviour
     Coroutine currentFlashRoutine;
     private Color initialColor;
 
-    private string backupCodeBlock;
-
     private void Start()
     {
         initialColor = Color.white;
-        backupCodeBlock = initialCodeBlock.codeBlock;
-        playerInput.text = backupCodeBlock;
+        playerInput.text = initialCodeBlock.codeBlock;
     }
-    private void OnEnable()
-    {
-        var player = GameObject.FindWithTag("Player").GetComponent<PlayerInput>().enabled = false;
-    }
-    private void OnDisable()
-    {
-        var player = GameObject.FindWithTag("Player").GetComponent<PlayerInput>().enabled = true;
-    }
+
 
 
     private void Update()
@@ -52,7 +40,7 @@ public class MonitorController : MonoBehaviour
 
             //Hiç biri matchlemezse gelir.
             StartFlash(Color.red);
-            playerInput.text = backupCodeBlock;
+            playerInput.text = initialCodeBlock.codeBlock;
 
 
         }
@@ -63,15 +51,11 @@ public class MonitorController : MonoBehaviour
     {
         if (validCodeBlock.codeBlock == playerInput.text)
         {
-            //Buradan eventler triggerlanacak
+            //Buradan event triggerlanacak
+
             StartFlash(Color.green);
-            foreach(GameEvent gameEvent in validCodeBlock.gameEvents)
-            {
-                gameEvent.Raise();
-            }
-
-            backupCodeBlock = validCodeBlock.codeBlock;
-
+            validCodeBlock.gameEvent.Raise();
+            playerInput.interactable = false;
             return true;
         }
         else return false;

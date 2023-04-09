@@ -10,7 +10,6 @@ public class GameEventListener : MonoBehaviour
 
     private void OnEnable()
     {
-        if (gameEvent == null) { Debug.LogError("Event assignlenmemis === " + this.gameObject.name); }
         gameEvent.RegisterListener(this);
     }
 

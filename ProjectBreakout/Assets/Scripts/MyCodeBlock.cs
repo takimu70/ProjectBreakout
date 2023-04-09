@@ -8,6 +8,6 @@ public class MyCodeBlock : ScriptableObject
     [TextArea(15,20)]
     public string codeBlock;
 
-    public GameEvent[] gameEvents;
+    public GameEvent gameEvent;
 
 }

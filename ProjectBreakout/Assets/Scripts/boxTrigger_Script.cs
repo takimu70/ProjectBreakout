@@ -8,8 +8,6 @@ public class boxTrigger_Script : MonoBehaviour
 
     private bool isInRange = false;
 
-    
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
