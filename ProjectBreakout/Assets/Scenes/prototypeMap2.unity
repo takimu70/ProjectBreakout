@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.006345963, g: 0.0054980954, b: 0.004856621, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -388,6 +388,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f3f3a4d0f6d2452478dfda4d6b8375b1, type: 3}
+--- !u!114 &50945576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6504001146716416249, guid: f3f3a4d0f6d2452478dfda4d6b8375b1, type: 3}
+  m_PrefabInstance: {fileID: 2617604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da0c512f12947e489f739169773d7ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &55689926
 GameObject:
   m_ObjectHideFlags: 0
@@ -2000,7 +2011,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103310
+  m_Name: pb_Mesh40614
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2520,6 +2531,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &234131159 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7079061846160766955, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
+  m_PrefabInstance: {fileID: 2055145104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &271072987
 Mesh:
   m_ObjectHideFlags: 0
@@ -3174,13 +3190,14 @@ GameObject:
   - component: {fileID: 330358231}
   - component: {fileID: 330358230}
   - component: {fileID: 330358229}
+  - component: {fileID: 330358233}
   m_Layer: 0
   m_Name: Computer with Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330358228
 Transform:
   m_ObjectHideFlags: 0
@@ -3192,7 +3209,7 @@ Transform:
   m_LocalPosition: {x: 23, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2055145105}
+  - {fileID: 234131159}
   m_Father: {fileID: 232832366}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -3475,6 +3492,23 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &330358233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 330358227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41ce8cd925a6de498f6caf5ddff20e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validCodeBlocks: []
+  initialCodeBlock: {fileID: 0}
+  playerInput: {fileID: 50945576}
+  childText: {fileID: 2130950094}
+  flashDuration: 0.5
 --- !u!43 &335142793
 Mesh:
   m_ObjectHideFlags: 0
@@ -9442,9 +9476,10 @@ GameObject:
   - component: {fileID: 925313382}
   - component: {fileID: 925313381}
   - component: {fileID: 925313380}
+  - component: {fileID: 925313385}
   m_Layer: 0
   m_Name: Computer with Cube
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9739,10 +9774,29 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1425568959}
+  - {fileID: 1024641119}
   m_Father: {fileID: 232832366}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &925313385
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 925313379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41ce8cd925a6de498f6caf5ddff20e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validCodeBlocks:
+  - {fileID: 11400000, guid: 577ba01eb4cceee4db6591b759412a4d, type: 2}
+  - {fileID: 11400000, guid: 0516182fafd092840be7cffbce067c8f, type: 2}
+  initialCodeBlock: {fileID: 11400000, guid: 0516182fafd092840be7cffbce067c8f, type: 2}
+  playerInput: {fileID: 50945576}
+  childText: {fileID: 2130950094}
+  flashDuration: 0.5
 --- !u!1 &988400217
 GameObject:
   m_ObjectHideFlags: 0
@@ -11537,6 +11591,11 @@ Transform:
   m_Father: {fileID: 781340067}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1024641119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7079061846160766955, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
+  m_PrefabInstance: {fileID: 1425568958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1027021110
 Mesh:
   m_ObjectHideFlags: 0
@@ -12178,6 +12237,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &1176982119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7079061846160766955, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
+  m_PrefabInstance: {fileID: 1780891781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1184758901
 GameObject:
   m_ObjectHideFlags: 0
@@ -14461,6 +14525,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3f480126654a8b4e85592ba8e5b46ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1334007985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334007981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f791a996535933b4aa6135843aad303e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: c4f314850f6523b4e876f116766c69aa, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1334007984}
+        m_TargetAssemblyTypeName: DoorOpenCloseAnim, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1334007986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334007981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f791a996535933b4aa6135843aad303e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 4e299c275e73eaa41b7d0204f48cd3ca, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1334007984}
+        m_TargetAssemblyTypeName: DoorOpenCloseAnim, Assembly-CSharp
+        m_MethodName: CloseDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1344526482
 GameObject:
   m_ObjectHideFlags: 0
@@ -14474,13 +14594,14 @@ GameObject:
   - component: {fileID: 1344526486}
   - component: {fileID: 1344526485}
   - component: {fileID: 1344526484}
+  - component: {fileID: 1344526488}
   m_Layer: 0
   m_Name: Computer with Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1344526483
 Transform:
   m_ObjectHideFlags: 0
@@ -14492,7 +14613,7 @@ Transform:
   m_LocalPosition: {x: 10, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1887835908}
+  - {fileID: 1855070211}
   m_Father: {fileID: 232832366}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14775,6 +14896,23 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &1344526488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1344526482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41ce8cd925a6de498f6caf5ddff20e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validCodeBlocks: []
+  initialCodeBlock: {fileID: 0}
+  playerInput: {fileID: 50945576}
+  childText: {fileID: 2130950094}
+  flashDuration: 0.5
 --- !u!1 &1350218835
 GameObject:
   m_ObjectHideFlags: 0
@@ -15095,6 +15233,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925313384}
     m_Modifications:
+    - target: {fileID: 1984401129418580105, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
+      propertyPath: computerScreenUI
+      value: 
+      objectReference: {fileID: 1928057398}
     - target: {fileID: 3090330815441841994, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
       propertyPath: m_Name
       value: computer-interactable
@@ -15145,11 +15287,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
---- !u!4 &1425568959 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8478033762438290345, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
-  m_PrefabInstance: {fileID: 1425568958}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1440756030
 GameObject:
   m_ObjectHideFlags: 0
@@ -15633,7 +15770,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103350
+  m_Name: pb_Mesh40654
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -17556,7 +17693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103182
+  m_Name: pb_Mesh40486
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18033,7 +18170,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh102892
+  m_Name: pb_Mesh40196
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -18248,11 +18385,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
---- !u!4 &1780891782 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8478033762438290345, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
-  m_PrefabInstance: {fileID: 1780891781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1782271983
 GameObject:
   m_ObjectHideFlags: 0
@@ -18566,6 +18698,11 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!4 &1855070211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7079061846160766955, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
+  m_PrefabInstance: {fileID: 1887835907}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1887579725
 Mesh:
   m_ObjectHideFlags: 0
@@ -18787,11 +18924,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
---- !u!4 &1887835908 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8478033762438290345, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
-  m_PrefabInstance: {fileID: 1887835907}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1906091472
 GameObject:
   m_ObjectHideFlags: 0
@@ -19269,6 +19401,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1928057398 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6504001146123150079, guid: f3f3a4d0f6d2452478dfda4d6b8375b1, type: 3}
+  m_PrefabInstance: {fileID: 2617604}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1938318318
 Mesh:
   m_ObjectHideFlags: 0
@@ -19603,7 +19740,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh103060
+  m_Name: pb_Mesh40364
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -20146,11 +20283,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
---- !u!4 &2055145105 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8478033762438290345, guid: 0c94ba18e2b95604b97df64b3760de4e, type: 3}
-  m_PrefabInstance: {fileID: 2055145104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2056088878
 GameObject:
   m_ObjectHideFlags: 0
@@ -21293,13 +21425,14 @@ GameObject:
   - component: {fileID: 2079085449}
   - component: {fileID: 2079085448}
   - component: {fileID: 2079085447}
+  - component: {fileID: 2079085451}
   m_Layer: 0
   m_Name: Computer with Cube (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2079085446
 Transform:
   m_ObjectHideFlags: 0
@@ -21311,7 +21444,7 @@ Transform:
   m_LocalPosition: {x: 23, y: 0, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1780891782}
+  - {fileID: 1176982119}
   m_Father: {fileID: 232832366}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -21594,6 +21727,23 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!114 &2079085451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079085445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41ce8cd925a6de498f6caf5ddff20e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validCodeBlocks: []
+  initialCodeBlock: {fileID: 0}
+  playerInput: {fileID: 50945576}
+  childText: {fileID: 2130950094}
+  flashDuration: 0.5
 --- !u!1 &2081074830
 GameObject:
   m_ObjectHideFlags: 0
@@ -23010,6 +23160,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &2130950094 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6504001146720544245, guid: f3f3a4d0f6d2452478dfda4d6b8375b1, type: 3}
+  m_PrefabInstance: {fileID: 2617604}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3272070559796922828
 PrefabInstance:
   m_ObjectHideFlags: 0

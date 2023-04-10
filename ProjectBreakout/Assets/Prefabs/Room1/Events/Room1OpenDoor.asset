@@ -9,13 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ce8bf9cbf1b88b145931c301afdf7d98, type: 3}
-  m_Name: Kapi
+  m_Script: {fileID: 11500000, guid: a1a9ff5dcede03845878d901f26e5689, type: 3}
+  m_Name: Room1OpenDoor
   m_EditorClassIdentifier: 
-  codeBlock: 'kutular = true;
-
-    kapi = false;
-
-    robot = true;'
-  gameEvents:
-  - {fileID: 11400000, guid: 19f63c8a65b0fa547b344bc36da7e5a5, type: 2}
+  listeners: []

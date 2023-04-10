@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using StarterAssets;
+using UnityEngine.InputSystem;
 
 public class MonitorController : MonoBehaviour
 {
-    
+
     [SerializeField] private MyCodeBlock[] validCodeBlocks;
 
     [SerializeField] private MyCodeBlock initialCodeBlock;
@@ -18,12 +20,22 @@ public class MonitorController : MonoBehaviour
     Coroutine currentFlashRoutine;
     private Color initialColor;
 
+    private string backupCodeBlock;
+
     private void Start()
     {
         initialColor = Color.white;
-        playerInput.text = initialCodeBlock.codeBlock;
+        backupCodeBlock = initialCodeBlock.codeBlock;
+        playerInput.text = backupCodeBlock;
     }
-
+    public void OnUIActiveEnable()
+    {
+        var player = GameObject.FindWithTag("Player").GetComponent<PlayerInput>().enabled = false;
+    }
+    public void OnUIDeactive()
+    {
+        var player = GameObject.FindWithTag("Player").GetComponent<PlayerInput>().enabled = true;
+    }
 
 
     private void Update()
@@ -40,7 +52,7 @@ public class MonitorController : MonoBehaviour
 
             //Hiç biri matchlemezse gelir.
             StartFlash(Color.red);
-            playerInput.text = initialCodeBlock.codeBlock;
+            playerInput.text = backupCodeBlock;
 
 
         }
@@ -51,11 +63,15 @@ public class MonitorController : MonoBehaviour
     {
         if (validCodeBlock.codeBlock == playerInput.text)
         {
-            //Buradan event triggerlanacak
-
+            //Buradan eventler triggerlanacak
             StartFlash(Color.green);
-            validCodeBlock.gameEvent.Raise();
-            playerInput.interactable = false;
+            foreach (GameEvent gameEvent in validCodeBlock.gameEvents)
+            {
+                gameEvent.Raise();
+            }
+
+            backupCodeBlock = validCodeBlock.codeBlock;
+
             return true;
         }
         else return false;
@@ -67,7 +83,7 @@ public class MonitorController : MonoBehaviour
 
     private void StartFlash(Color color)
     {
-        
+
 
         if (currentFlashRoutine != null)
         {
@@ -79,8 +95,8 @@ public class MonitorController : MonoBehaviour
     IEnumerator Flash(Color color)
     {
         float duration = flashDuration;
-        
-        
+
+
         while (duration > 0)
         {
             childText.color = Color.Lerp(initialColor, color, duration);
